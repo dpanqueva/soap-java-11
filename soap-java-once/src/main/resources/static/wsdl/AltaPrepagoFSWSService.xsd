@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5.--><xs:schema version="1.0" targetNamespace="http://ws.endpoint.apf.scl.cl.amdocs.com/" xmlns:tns="http://ws.endpoint.apf.scl.cl.amdocs.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ApfServiceException" type="tns:ApfServiceException"/>
+  <xs:element name="altaPrepago" type="tns:altaPrepago"/>
+  <xs:element name="altaPrepagoResponse" type="tns:altaPrepagoResponse"/>
+  <xs:element name="cleanServerCache" type="tns:cleanServerCache"/>
+  <xs:element name="cleanServerCacheResponse" type="tns:cleanServerCacheResponse"/>
+  <xs:element name="getServiceStatus" type="tns:getServiceStatus"/>
+  <xs:element name="getServiceStatusResponse" type="tns:getServiceStatusResponse"/>
+  <xs:complexType name="altaPrepago">
+    <xs:sequence>
+      <xs:element name="apfRequest" type="tns:apfRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="apfRequest">
+    <xs:sequence>
+      <xs:element name="nomUsuaOra" type="xs:string"/>
+      <xs:element name="nomCliente" type="xs:string"/>
+      <xs:element name="ape1Cliente" type="xs:string"/>
+      <xs:element name="ape2Cliente" type="xs:string" minOccurs="0"/>
+      <xs:element name="codTipIdentCliente" type="xs:string"/>
+      <xs:element name="numIdentCliente" type="xs:string"/>
+      <xs:element name="fecNacimiento" type="xs:dateTime"/>
+      <xs:element name="indSexo" type="xs:string"/>
+      <xs:element name="codEstadoCivil" type="xs:string"/>
+      <xs:element name="indTipPersona" type="xs:string"/>
+      <xs:element name="nomEmailCliente" type="xs:string" minOccurs="0"/>
+      <xs:element name="fecAltaCliente" type="xs:dateTime"/>
+      <xs:element name="nomResponsable" type="xs:string" minOccurs="0"/>
+      <xs:element name="codTipIdentResponsable" type="xs:string" minOccurs="0"/>
+      <xs:element name="numIdentResponsable" type="xs:string" minOccurs="0"/>
+      <xs:element name="telefono1" type="xs:string"/>
+      <xs:element name="telefono2" type="xs:string" minOccurs="0"/>
+      <xs:element name="codRegion" type="xs:string"/>
+      <xs:element name="codProvincia" type="xs:string"/>
+      <xs:element name="codCiudad" type="xs:string"/>
+      <xs:element name="codComuna" type="xs:string"/>
+      <xs:element name="nomCalle" type="xs:string"/>
+      <xs:element name="numCalle" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipCalle" type="xs:string"/>
+      <xs:element name="obsDireccion" type="xs:string" minOccurs="0"/>
+      <xs:element name="desDirec1" type="xs:string" minOccurs="0"/>
+      <xs:element name="desDirec2" type="xs:string" minOccurs="0"/>
+      <xs:element name="codOperadorDonante" type="xs:string" minOccurs="0"/>
+      <xs:element name="fecVentanaCambio" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="indTrxPortabilidad" type="xs:string" minOccurs="0"/>
+      <xs:element name="codEscenarioPortabilidad" type="xs:long" minOccurs="0"/>
+      <xs:element name="codArticuloImei" type="xs:string"/>
+      <xs:element name="numSerieImei" type="xs:string"/>
+      <xs:element name="numSerieIcc" type="xs:string"/>
+      <xs:element name="numCelular" type="xs:long"/>
+      <xs:element name="codEstrato" type="xs:string"/>
+      <xs:element name="fecAltaAbonado" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="altaPrepagoResponse">
+    <xs:sequence>
+      <xs:element name="apfResponse" type="tns:apfResponse" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="apfResponse">
+    <xs:sequence>
+      <xs:element name="numEvento" type="xs:long"/>
+      <xs:element name="codRetorno" type="xs:int"/>
+      <xs:element name="msgRetorno" type="xs:string"/>
+      <xs:element name="codCliente" type="xs:long"/>
+      <xs:element name="codCiclo" type="xs:int"/>
+      <xs:element name="codPlanTarif" type="xs:string"/>
+      <xs:element name="numCelular" type="xs:long"/>
+      <xs:element name="numSerieIcc" type="xs:string"/>
+      <xs:element name="numSerieImei" type="xs:string"/>
+      <xs:element name="numAbonado" type="xs:long"/>
+      <xs:element name="numVenta" type="xs:long"/>
+      <xs:element name="numTrx" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ApfServiceException">
+    <xs:sequence>
+      <xs:element name="code" type="xs:int"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cleanServerCache">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="cleanServerCacheResponse">
+    <xs:sequence>
+      <xs:element name="appManagerResponse" type="tns:response" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="response">
+    <xs:sequence>
+      <xs:element name="numEvento" type="xs:int"/>
+      <xs:element name="codRetorno" type="xs:int"/>
+      <xs:element name="msgRetorno" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getServiceStatus">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getServiceStatusResponse">
+    <xs:sequence>
+      <xs:element name="appManagerResponse" type="tns:response" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
